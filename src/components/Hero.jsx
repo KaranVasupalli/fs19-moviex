@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { RotatingLines } from 'react-loader-spinner';
 
 const Hero = () => {
   const [movies, setMovies] = useState([]);
@@ -65,7 +66,15 @@ const Hero = () => {
             </div>
           ))
         ) : (
-          <p>No movies found</p>
+          <RotatingLines
+            visible={true}
+            height="96"
+            width="96"
+            strokeColor="rgb(71 85 105)"  // Change the loader color here
+            strokeWidth="5"
+            animationDuration="0.75"
+            ariaLabel="rotating-lines-loading"
+          />
         )}
       </div>
     </div>
